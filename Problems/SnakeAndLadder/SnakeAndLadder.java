@@ -21,11 +21,17 @@ public class SnakeAndLadder {
         int Pos_Player1 = 0;
         System.out.println("welcome player one. Your starting position will be " + Pos_Player1);
 
-        // now we will call the function of the dice 
-        int dice = Dice();
+        
+
+        // adding a variable to check the total dice rolls
+        int diceRoll_Player1 = 0;
 
         // we will keep rolling the dice until we get winnig position 
         while(Pos_Player1 != winning_pos){
+
+            // now we will call the function of the dice 
+            int dice = Dice();
+            diceRoll_Player1++;
         
             // now adding the checks on the game
             int check = (int) (Math.random() * 100) % 3;
@@ -56,7 +62,10 @@ public class SnakeAndLadder {
             if (Pos_Player1>winning_pos) {
                 Pos_Player1 = Pos_Player1 - dice;
             }
+            // telling the position after every dice roll
+            System.out.println("player one rolled the dice and got :" + dice + " and moved to position :" + Pos_Player1);
         }
+        System.out.println("number of times the dice rolled was :" + diceRoll_Player1);
     }
 }
 
